@@ -204,12 +204,12 @@ export function SiteNav() {
           }}
         >
           <span className="inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-            <span>Free Shipping · Islandwide Delivery | Shop Now </span>
+            <span>Free Shipping · Islandwide Delivery</span>
             
             {/* Website URL - Always visible */}
             <span className="hidden sm:inline-block text-[10px] opacity-60 tracking-[0.15em]">
               <span className="mx-2">|</span>
-              ceylonearthora.store
+              ceyloanearthora.store
             </span>
             
             <span 
