@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Leaf } from "lucide-react";
+import { Instagram, Facebook, Leaf, Youtube } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -36,7 +36,7 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Follow</h4>
           <div className="mt-4 flex gap-3">
             <a
-              href="https://instagram.com/earthora"
+              href="https://www.instagram.com/ceylon.earthora?igsh=OXpjaGV3cXB1ZnRk"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -45,7 +45,7 @@ export function SiteFooter() {
               <Instagram className="h-4 w-4" />
             </a>
             <a
-              href="https://facebook.com/earthora"
+              href="https://www.facebook.com/share/1JB47Qn8z4/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -54,7 +54,7 @@ export function SiteFooter() {
               <Facebook className="h-4 w-4" />
             </a>
             <a
-              href="https://tiktok.com/@earthora"
+              href="https://www.tiktok.com/@madutennakoon?_r=1&_t=ZS-9824iyPl1IT"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
@@ -64,7 +64,15 @@ export function SiteFooter() {
                 <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-2.84 3.37-2.22V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.55a7.35 7.35 0 0 0 4.32 1.4V8.25a4.278 4.278 0 0 1-2.53-2.43z"/>
               </svg>
             </a>
-         
+            <a
+              href="https://www.youtube.com/@ceylonearthoraJournal"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="rounded-full border border-border/70 p-2.5 text-muted-foreground transition-all hover:text-leaf hover:border-leaf"
+            >
+              <Youtube className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>

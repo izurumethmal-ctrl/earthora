@@ -143,7 +143,7 @@ export function SiteNav() {
     <>
       {/* Enhanced Announcement Bar with Glow Effects */}
       <a 
-        href="https://www.ceyloanearthora.store" 
+        href="https://ceylonearthora.store" 
         target="_blank" 
         rel="noopener noreferrer"
         className="block w-full group relative overflow-hidden"
