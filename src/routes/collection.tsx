@@ -25,12 +25,12 @@ type Category = "All" | "Women" | "Men" | "Kids"| "Babies"| "Others";
 const filters: Category[] = ["All", "Women", "Men", "Kids", "Babies", "Others"];
 
 const products = [
-  { img: women, name: "Sage & Ember Slip", price: "LKR 18,500", category: "Women", tag: "Eco-print" },
-  { img: men, name: "Olive Clay Overshirt", price: "LKR 16,200", category: "Men", tag: "Batik" },
-  { img: kids, name: "Newborn Cotton Set", price: "LKR 6,800", category: "Kids", tag: "Undyed" },
-  { img: hero, name: "Forest Ember Linen", price: "LKR 22,400", category: "Women", tag: "Signature" },
-  { img: about, name: "Indigo Botanical Tee", price: "LKR 12,500", category: "Men", tag: "Tie-dye" },
-  { img: ingredients, name: "Bark & Leaf Sash", price: "LKR 4,900", category: "Others", tag: "Accessory" },
+  { img: women, name: "Sage & Ember Slip",  category: "Women", tag: "Eco-print" },
+  { img: men, name: "Olive Clay Overshirt",  category: "Men", tag: "Batik" },
+  { img: kids, name: "Newborn Cotton Set",  category: "Kids", tag: "Undyed" },
+  { img: hero, name: "Forest Ember Linen", category: "Women", tag: "Signature" },
+  { img: about, name: "Indigo Botanical Tee",  category: "Men", tag: "Tie-dye" },
+  { img: ingredients, name: "Bark & Leaf Sash", category: "Others", tag: "Accessory" },
 ] as const;
 
 function Collection() {
@@ -92,11 +92,6 @@ function Collection() {
                 </div>
                 <div className="absolute top-4 left-4 rounded-full glass px-3 py-1 text-[10px] uppercase tracking-[0.2em]">
                   {p.tag}
-                </div>
-                <div className="absolute inset-x-4 bottom-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <button className="w-full rounded-full bg-primary py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground">
-                    Add to Bag
-                  </button>
                 </div>
               </div>
               <div className="mt-4 flex items-baseline justify-between">
