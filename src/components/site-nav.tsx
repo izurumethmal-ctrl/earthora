@@ -46,6 +46,38 @@ const animationStyles = `
     }
   }
 
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
   .animate-slide-down {
     animation: slideDown 0.4s ease-out forwards;
   }
@@ -109,14 +141,103 @@ export function SiteNav() {
 
   return (
     <>
-      <div 
-        className="w-full bg-primary text-primary-foreground text-[11px] tracking-[0.25em] uppercase py-2 text-center font-medium"
+      {/* Enhanced Announcement Bar with Glow Effects */}
+      <a 
+        href="https://www.ceyloanearthora.store" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block w-full group relative overflow-hidden"
         style={{
-          animation: "slideDown 0.5s ease-out",
+          animation: "bounceIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         }}
       >
-        Free Shipping · Islandwide Delivery
-      </div>
+        {/* Primary Glow - Radial gradient that expands on hover */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
+          style={{
+            background: "radial-gradient(circle at 30% 50%, rgba(var(--leaf-rgb), 0.15) 0%, transparent 70%)",
+            transform: "scale(0.8)",
+            transition: "all 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.2)";
+            e.currentTarget.style.opacity = "1";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(0.8)";
+            e.currentTarget.style.opacity = "0";
+          }}
+        />
+
+        {/* Secondary Glow - Bottom glow with warm tones */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700"
+          style={{
+            background: "radial-gradient(ellipse at 50% 100%, rgba(255, 200, 100, 0.08) 0%, transparent 70%)",
+            transition: "all 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        />
+
+        {/* Shimmer Glow - Animated highlight that moves across */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
+            backgroundSize: "200% 100%",
+            animation: "shimmer 3s ease-in-out infinite",
+          }}
+        />
+
+        {/* Border Glow - Subtle border highlight */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+          style={{
+            boxShadow: "inset 0 0 30px rgba(var(--leaf-rgb), 0.05), 0 0 40px rgba(var(--leaf-rgb), 0.03)",
+          }}
+        />
+
+        <div 
+          className="relative w-full bg-primary text-primary-foreground text-[11px] tracking-[0.25em] uppercase py-2.5 text-center font-medium overflow-hidden"
+          style={{
+            animation: "slideDown 0.5s ease-out",
+            transition: "all 0.3s cubic-bezier(0.22, 1, 0.36, 1)",
+          }}
+        >
+          <span className="inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+            <span>Free Shipping · Islandwide Delivery | Shop Now </span>
+            
+            {/* Website URL - Always visible */}
+            <span className="hidden sm:inline-block text-[10px] opacity-60 tracking-[0.15em]">
+              <span className="mx-2">|</span>
+              ceylonearthora.store
+            </span>
+            
+            <span 
+              className="inline-block transition-all duration-300 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+              style={{
+                transition: "all 0.3s cubic-bezier(0.22, 1, 0.36, 1)",
+              }}
+            >
+              →
+            </span>
+          </span>
+          
+          <span 
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary-foreground/50"
+            style={{
+              animation: "pulse 2s ease-in-out infinite",
+            }}
+          />
+          
+          <span 
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-1/2 h-[1px] bg-primary-foreground/30 transition-all duration-500"
+            style={{
+              transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+            }}
+          />
+        </div>
+      </a>
+
       <header
         className={cn(
           "sticky top-0 z-50 transition-all duration-500",
